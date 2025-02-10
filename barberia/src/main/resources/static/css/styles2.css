@@ -1,0 +1,91 @@
+/* Contenedor principal */
+.agendar-cita-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 15px; /* Espacio interno reducido */
+    width: 60%; /* Contenedor más pequeño */
+    max-width: 600px; /* Limite el tamaño máximo */
+    margin: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #f8f8f8; /* Color de fondo */
+}
+
+/* Contenedor del título e imágenes */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Separa el título y las imágenes */
+    align-items: center; /* Alinea en la misma altura */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Título alineado arriba a la izquierda */
+.titulo-container {
+    text-align: left;
+}
+
+/* Contenedor para imágenes alineadas horizontalmente */
+.th-images {
+    display: flex;
+    gap: 10px; /* Espacio entre imágenes */
+}
+
+.th-images img {
+    width: 50px; /* Tamaño de las imágenes */
+    height: auto;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Campos del formulario */
+.form-group {
+    display: flex;
+    flex-direction: center;
+    width: 80%; /* Todos los campos del mismo tamaño */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    width: 150px; 
+}
+
+.form-group input,
+.form-group select {
+    flex: 1; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; 
+    min-width: 0; 
+    box-sizing: border-box;
+}
+/* Botón de registro */
+.boton-container {
+    text-align: center;
+    width: 100%;
+}
+
+.boton-container button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.boton-container button:hover {
+    background-color: #357ABD; /* Un tono más oscuro al pasar el mouse */
+}
