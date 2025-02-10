@@ -1,21 +1,107 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
-    <title>Barberia Hilos y Procesos</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Barbería Hilos y Procesos</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        table {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        th {
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .th-images {
+            display: flex;
+            gap: 5px;
+            margin-right: auto; 
+        }
+
+        th img {
+            width: 50px;
+            height: auto;
+        }
+
+        .opciones {
+            text-align: center;
+            padding: 20px;
+        }
+        .opciones a {
+            text-decoration: none;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-<header class="anuncios">Bienvenido Usuario, selecione una opción</header>
 
-<div class="opciones">
-    <a th:href="@{/agendar_cita}">
-        <button>Agendar</button>
-    </a>
-    <a th:href="@{/buscar_citas}">
-    <button>Buscar</button>
-    </a>
-</div>
+    <header class="anuncios"></header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="th-images">
+                            <img th:src="@{/images/registro.png}" alt="Registro">
+                            <img th:src="@{/images/registro.png}" alt="Registro">
+                            <img th:src="@{/images/registro.png}" alt="Registro">
+                        </div>
+                        Agendamientos Citas
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="opciones">
+                    <td>
+                        <a th:href="@{/agendar_cita}">
+                            <button>Agendar</button>
+                        </a>
+                        <a th:href="@{/buscar_citas}">
+                            <button>Buscar</button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
