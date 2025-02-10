@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>Barberia Ejemplo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="entradas">
+    <header class="anuncios">Agendar Cita</header>
+    <form action="/procesar-formulario" method="post">
+        <!-- Campo Cédula -->
+        <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" maxlength="10" pattern="^(\d{8}|\d{10})$" required>
+        </div>
+
+        <!-- Campo Nombre -->
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Campo Edad -->
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="1" max="150" required>
+        </div>
+
+        <!-- Campos Fecha y Hora -->
+        <div class="form-group">
+            <div class="fecha-hora">
+                <label for="fecha">Fecha-Hora:</label>
+                <select id="fecha" name="fecha" required>
+                    <option value="" disabled selected>Seleccione una fecha</option>
+                    <option th:each="fecha : ${fechas}" th:value="${fecha}" th:text="${fecha}"></option>
+                </select>
+
+                <input type="time" id="hora" name="hora" required>
+            </div>
+        </div>
+
+        <!-- Mensaje de éxito (se muestra solo si hay un mensaje en el modelo) -->
+        <div th:if="${mensaje}" th:text="${mensaje}" class="alerta"></div>
+        <div th:if="${advertencia}" th:text="${advertencia}" class="rechazo"></div>
+
+        <!-- Botón de envío -->
+        <div class = "respuesta_usr">
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+</body>
+</html>

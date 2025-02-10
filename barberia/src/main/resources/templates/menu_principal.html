@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>Barberia Hilos y Procesos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="anuncios">Bienvenido Usuario, selecione una opción</header>
+
+<div class="opciones">
+    <a th:href="@{/agendar_cita}">
+        <button>Agendar</button>
+    </a>
+    <a th:href="@{/buscar_citas}">
+    <button>Buscar</button>
+    </a>
+</div>
+
+</body>
+</html>

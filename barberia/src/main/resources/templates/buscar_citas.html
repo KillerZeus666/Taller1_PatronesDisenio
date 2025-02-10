@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>Barberia Ejemplo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="anuncios">Buscar Cita</header>
+<form action="/consultar-cita" method="get">
+    <!-- Campo Busqueda -->
+    <div class="form-group">
+        <select id="sel_fecha" name="sel_fecha" required>
+            <option value="" disabled selected>Seleccione una fecha</option>
+            <option th:each="fecha : ${fechas_disponibles}" th:value="${fecha}" th:text="${fecha}"></option>
+        </select>
+    </div>
+
+    <div class = "respuesta_usr">
+        <button type="submit">Buscar</button>
+    </div>
+
+</form>
+    <!-- Tabla -->
+<div th:if="${not#lists.isEmpty(citas_disp)}">
+    <table class="tabla">
+        <tr>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Hora</th>
+        </tr>
+        <tr th:each="cita_disp : ${citas_disp}">
+            <td th:text="${cita_disp.cedula}"></td>
+            <td th:text="${cita_disp.nombre}"></td>
+            <td th:text="${cita_disp.hora}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
